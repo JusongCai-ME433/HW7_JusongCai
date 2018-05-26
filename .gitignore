@@ -50,3 +50,5 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+/HW7.X/nbproject/private/
+/HW7.X/dist/default/

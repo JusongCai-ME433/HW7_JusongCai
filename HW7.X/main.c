@@ -89,17 +89,17 @@ int main() {
        _CP0_SET_COUNT(0);
        // who am i test
        unsigned char status = imu_test();
-       sprintf(test_msg, "Test address = %d  ", status);
+       sprintf(test_msg, "WHOAMI = %d  ", status);
        LCD_drawString(1, 1, test_msg, WHITE, BLACK);
 
        // get the x & y acceleration data
        I2C_read_multiple(IMU_ADDR, 0x20, data, DATA_LEN);
-       xAcc = getXAcc(data);
+       xAcc = (-1)*getXAcc(data);
        yAcc = getYAcc(data);
 
-       sprintf(msg, "xAcc = %1.3f  ", xAcc);
+       sprintf(msg, "AX = %1.3f  ", xAcc);
        LCD_drawString(1, 10, msg, WHITE, BLACK);
-       sprintf(msg, "yAcc = %1.3f  ", yAcc);
+       sprintf(msg, "AY = %1.3f  ", yAcc);
        LCD_drawString(1, 20, msg, WHITE, BLACK);
 
        // draw static bar

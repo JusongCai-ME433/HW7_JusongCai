@@ -1,1 +1,7 @@
 # HW7_JusongCai
+
+In this homework #7, I first soldered IMU (LSM6DS33:Data Sheet attached) separately and then wired it into breadboard to communicate with PIC32 via I2C. Finally I displayed the test bar both in vertical and horizontal directions to show accelerations of X and Y directions on LCD.
+
+Steps include: check the communication by reading the WHOAMI register which should be 0b01101001 (decimal 105); write functions to be able to read registers in a row including temperature, gyroscope, and accelerometer data; read the IMU at 20Hz and blink your LED as a heartbeat; draw bars starting from the center of the LCD in the chip +X and +Y directions and scale the length of the bars to match the readings from the accelerometer; compile codes together: LCD communication named "ST7735.c" and "ST7735.h", IMU communication named "imc.h" and "imu.c", I2C communication named "i2c_master_noint.h" and "i2c_master_noint.c", and main coding function called "main.c".
+
+After building the program, coding package folder "HW7.X" has been set up. Load the program to the board and make it run. So the result has been recorded as a "demo video for HW7.mp4". Other files like circuit diagram and breadboard wiring are also included in this repo. If you want to see more info about IMU, please check "LSM6DS33_Data_Sheet.pdf".
